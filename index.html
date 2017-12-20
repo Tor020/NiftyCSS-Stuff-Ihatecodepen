@@ -15,19 +15,12 @@
 
   <!-- usage of pretty print
 <code class="prettyprint">...</code>  code has no line breaks
-<pre class="prettyprint">...</pre> --> 
+<pre class="prettyprint">...</pre> -->
 </head>
 
 <body>
   <!-- spinOffs -->
 
-  <div style="max-width: 20em; margin:0 auto;">
-
-
-
-
-    <a style=" margin:0 auto; text-align:center;" href="spinoff.html">spinoff</a>
-  </div>
   <!-- Container1 -->
 
   <div class="container">
@@ -38,7 +31,7 @@
 
 
       <pre class="prettyprint">
-          .square{   
+        .square{   
           width:0;
           height:0; 
           /* position:relative; */
@@ -61,6 +54,54 @@
 
     <div id="root2" style="border:solid 2px black; padding:5em; width:100%;">
 
+      <div class="arrow-up"></div>
+
+      <div class="arrow-down"></div>
+
+      <div class="arrow-right"></div>
+
+      <div class="arrow-left"></div>
+
+      <pre class="prettyprint">
+
+          .arrow-up {
+            width: 0; 
+            height: 0; 
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            
+            border-bottom: 5px solid black;
+          }
+
+          .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            
+            border-top: 20px solid #f00;
+          }
+
+          .arrow-right {
+            width: 0; 
+            height: 0; 
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            
+            border-left: 30px solid green;
+          }
+
+          .arrow-left {
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent; 
+            
+            border-right:10px solid blue; 
+          }
+      </pre>
+
+
     </div>
   </div>
 
@@ -69,6 +110,79 @@
   <div class="container">
 
     <div id="root3" style="border:solid 2px black; padding:5em; width:100%;">
+
+      <div class="non-semantic-protector">
+        <h1 class="ribbon">
+          <strong class="ribbon-content">Everybody loves ribbons</strong>
+        </h1>
+      </div>
+
+
+      <pre class="prettyprint htmlIsSuchADick lang-html">
+   &lt;div class=&quot;non-semantic-protector&quot;&gt;
+        &lt;h1 class=&quot;ribbon&quot;&gt;
+          &lt;strong class=&quot;ribbon-content&quot;&gt;Everybody loves ribbons&lt;/strong&gt;
+        &lt;/h1&gt;
+      &lt;/div&gt;
+      </pre>
+      <pre class="prettyprint linenums lang-css">  
+
+
+          
+                          // css
+                          .ribbon {
+                          font-size: 16px !important;
+                          /* This ribbon is based on a 16px font side and a 24px vertical rhythm.
+                          I've used em's to position each element for scalability.
+                          If you want to use a different font size you may have to play with the position of the ribbon elements */
+                                
+                          width: 50%;
+                                
+                          position: relative;
+                          background: #ba89b6;
+                          color: #fff;
+                          text-align: center;
+                          padding: 1em 2em; /* Adjust to suit */
+                          margin: 2em auto 3em; /* Based on 24px vertical rhythm.
+                          48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+                          }
+                          .ribbon:before, .ribbon:after {
+                          content: "";
+                          position: absolute;
+                          display: block;
+                          bottom: -1em;
+                          border: 1.5em solid #986794;
+                          z-index: -1;
+                          }
+                          .ribbon:before {
+                          left: -2em;
+                          border-right-width: 1.5em;
+                          border-left-color: transparent;
+                          }
+                          .ribbon:after {
+                          right: -2em;
+                          border-left-width: 1.5em;
+                          border-right-color: transparent;
+                          }
+                          .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+                          content: "";
+                          position: absolute;
+                          display: block;
+                          border-style: solid;
+                          border-color: #804f7c transparent transparent transparent;
+                          bottom: -1em;
+                          }
+                          .ribbon .ribbon-content:before {
+                          left: 0;
+                          border-width: 1em 0 0 1em;
+                          }
+                          .ribbon .ribbon-content:after {
+                          right: 0;
+                          border-width: 1em 1em 0 0;
+                          }
+                          .non-semantic-protector { position: relative; z-index: 1; }</pre>
+
+
 
 
     </div>
